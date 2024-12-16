@@ -1153,6 +1153,7 @@ class InspectedComment(Inspected):
             self.object_type == other.object_type,
             self.object_addr == other.object_addr,
             self.object_args == other.object_args,
+            self.comment == other.comment,
         )
         return all(equalities)
 
@@ -1971,4 +1972,5 @@ class PostgreSQL(DBInspector):
             and self.triggers == other.triggers
             and self.collations == other.collations
             and self.rlspolicies == other.rlspolicies
+            and self.comments == other.comments
         )
